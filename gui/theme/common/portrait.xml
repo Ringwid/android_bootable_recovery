@@ -386,6 +386,12 @@
 			</checkbox>
 
 			<checkbox>
+				<placement x="%indent%" y="%row12_y%"/>
+				<text>{@zip_sig_chk=Zip signature verification}</text>
+				<data variable="tw_signed_zip_verify"/>
+			</checkbox>
+
+			<checkbox>
 				<placement x="%indent%" y="%row13a_y%"/>
 				<text>{@install_reboot_chk=Reboot after installation is complete}</text>
 				<data variable="tw_install_reboot"/>
