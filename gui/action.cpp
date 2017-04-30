@@ -1364,6 +1364,11 @@ int GUIAction::terminalcommand(std::string arg)
 		LOGINFO("Exiting terminal\n");
 		operation_end(op_status);
 		page("main");
+	} else if (compare(0, "set-device-type".size(), head) == 0) {
+        std::string device_type = arg.substr(16);
+        property_set('ro.build.product', device_type);
+        property_set('ro.build.device', device_type);
+        LOGINFO("Device type has been set to " + device_type + ".\n");
 	} else {
 		command = "cd \"" + cmdpath + "\" && " + arg + " 2>&1";;
 		LOGINFO("Actual command is: '%s'\n", command.c_str());
