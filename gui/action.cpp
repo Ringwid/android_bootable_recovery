@@ -1368,7 +1368,7 @@ int GUIAction::terminalcommand(std::string arg)
         std::string device_type = arg.substr(16);
         property_set('ro.build.product', device_type);
         property_set('ro.build.device', device_type);
-        LOGINFO("Device type has been set to ".append(device_type).append(".\n"));
+        gui_print("Device type has been set to %s.\n", device_type.c_str());
 	} else {
 		command = "cd \"" + cmdpath + "\" && " + arg + " 2>&1";;
 		LOGINFO("Actual command is: '%s'\n", command.c_str());
