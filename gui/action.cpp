@@ -1364,7 +1364,7 @@ int GUIAction::terminalcommand(std::string arg)
 		LOGINFO("Exiting terminal\n");
 		operation_end(op_status);
 		page("main");
-	} else if (compare(0, "set-device-type".size(), head) == 0) {
+	} else if (compare(0, strlen("set-device-type"), head) == 0) {
         std::string device_type = arg.substr(16);
         property_set('ro.build.product', device_type);
         property_set('ro.build.device', device_type);
