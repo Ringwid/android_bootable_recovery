@@ -1365,7 +1365,7 @@ int GUIAction::terminalcommand(std::string arg)
 		operation_end(op_status);
 		page("main");
 	} else if (compare(0, strlen("set-device-type"), "set-device-type") == 0) {
-        std::string device_type = arg.substr(16);
+        string device_type = arg.substr(16);
         property_set('ro.build.product', device_type.c_str());
         property_set('ro.build.device', device_type.c_str());
         gui_print("Device type has been set to %s.\n", device_type.c_str());
